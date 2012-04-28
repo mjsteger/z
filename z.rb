@@ -1,7 +1,5 @@
 #!/usr/bin/env ruby
 
-
-require 'ruby-debug'
 require 'optparse'
 require 'fileutils'
 
