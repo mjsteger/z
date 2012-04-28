@@ -1,6 +1,6 @@
 Z is a tool to allow you to easily hop to where you are going in the shell, without having to type out a long pathname every time. If you find yourself constantly doing ```cd /long/path/that/is/annoying/```, then you can simply do ```z -a shortname /long/path/that/is/annoying```, and then every time after that, simply ```z shortname``` in order to go to that directory.
 
 ### Setup
-`git clone git@github.com:mjsteger/z.git ~/.z`
+```git clone git@github.com:mjsteger/z.git ~/.z```
 
 Then, in the shell configuration of your choice(i.e., .zshrc or .bashrc), simply add ```source $HOME/.z/z.sh```
