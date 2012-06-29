@@ -13,6 +13,19 @@ def deleteFromFile(shortcut)
   File.open($z_file, 'w') {|f| f.write(entryHash.map{|x| x.join"="}.join("\n") + "\n")}
 end
 
+def findEntry(shortcut)
+  entryHash = Hash[File.open($z_file, 'r').read.split.map{|x| x.split("=")}]
+  return entryHash[shortcut]
+end
+
+def normalHop(shortcut)
+  place_to_hop = findEntry(shortcut)
+  if place_to_hop.nil?
+    return
+  end
+  puts "cd #{place_to_hop}"
+end
+
 opts.on('-h', '--help') do |x|
   puts "echo \'#{opts}\'"
 end
@@ -38,17 +51,5 @@ opts.on('-e', "Export the list into a format which can be used for emacs bookmar
 
 opts.parse!ARGV
 
-def findEntry(shortcut)
-  entryHash = Hash[File.open($z_file, 'r').read.split.map{|x| x.split("=")}]
-  return entryHash[shortcut]
-end
-
-def normalHop(shortcut)
-  place_to_hop = findEntry(shortcut)
-  if place_to_hop.nil?
-    return
-  end
-  puts "cd #{place_to_hop}"
-end
 
 normalHop(ARGV.first)
