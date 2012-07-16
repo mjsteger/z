@@ -3,7 +3,7 @@
 require 'optparse'
 require 'fileutils'
 
-$z_file = Dir.home + "/.z_shortcuts"
+$z_file = File.expand_path('~/') + "/.z_shortcuts"
 FileUtils.touch($z_file)
 opts = OptionParser.new
 
