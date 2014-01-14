@@ -1,1 +1,1 @@
-cat /Users/michaelsteger/.z_shortcuts | cut -d "=" -f 1
+cat ~/.z_shortcuts | cut -d "=" -f 1
