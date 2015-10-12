@@ -1,0 +1,5 @@
+#compdef z
+
+local -a completions
+completions=`cat ~/.z_shortcuts | cut -d "=" -f 1 | tr "\n" " "`
+_alternative "args:directories to z to:($completions)"
